@@ -9,18 +9,17 @@ config.pixel_height = 1920
 
 class theRose(Scene):
     def construct(self):
-        screen_width = config.frame_width
-        screen_height = config.frame_height
-        border_width = 2
+        # screen_width = config.frame_width
+        # screen_height = config.frame_height
+        # border_width = 2
         
-        border_rect = Rectangle(
-            width=screen_width,
-            height=screen_height,
-            stroke_width=border_width,
-            stroke_color = WHITE
-        )
-
-        self.add(border_rect)
+        # border_rect = Rectangle(
+        #     width=screen_width,
+        #     height=screen_height,
+        #     stroke_width=border_width,
+        #     stroke_color = WHITE
+        # )
+        # self.add(border_rect)
 
         def func(t, k):
             x = np.cos(k*t)*np.cos(t)
@@ -50,7 +49,7 @@ class theRose(Scene):
 
         cg = VGroup(c, *cArray)
         Full_text = VGroup(title, formula_text, cg)
-        Full_text.arrange(DOWN, 0.5, True)
+        Full_text.arrange(DOWN, 1, True)
         Full_text.to_edge(UP, buff=1)
 
         self.play(Write(title), Write(formula_text)) 
